@@ -1,37 +1,31 @@
 document.getElementById('formulario').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+    event.preventDefault(); // Evita que o formulário seja enviado automaticamente
 
     var nome = document.getElementById('nome').value.trim();
     var email = document.getElementById('email').value.trim();
+    var mensagemElement = document.getElementById('mensagem');
 
-    
+    // Resetar mensagem de erro
+    mensagemElement.textContent = '';
+
+    // Validar campo Nome
     if (nome === '') {
-        exibirMensagemErro('Por favor, informe seu nome.');
-        return;
-    }
-    if (email === '') {
-        exibirMensagemErro('Por favor, informe seu email.');
-        return;
+        mensagemElement.textContent = 'Por favor, preencha o nome.';
+        return; // Impede o envio do formulário se o nome estiver vazio
     }
 
-    
-    var formData = {
+    // Validar campo Email
+    if (email === '') {
+        mensagemElement.textContent = 'Por favor, preencha o email.';
+        return; // Impede o envio do formulário se o email estiver vazio
+    }
+
+    // Se os campos estiverem preenchidos corretamente, exibir os dados no console em formato JSON
+    var dados = {
         nome: nome,
         email: email
     };
+    console.log('Dados do formulário:', JSON.stringify(dados));
 
-    
-    console.log(JSON.stringify(formData));
-
-    
-    document.getElementById('nome').value = '';
-    document.getElementById('email').value = '';
-
-    
-    exibirMensagemSucesso('Dados enviados com sucesso!');
+    // Aqui você pode enviar os dados para o servidor ou realizar outra ação desejada após a validação
 });
-
-function exibirMensagemErro(mensagem) {
-    var mensagemElemento = document.getElementBy
-
-
