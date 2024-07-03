@@ -1,35 +1,37 @@
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    
-    event.preventDefault();
+document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault(); 
 
-   
-    var name = document.getElementById('name').value.trim();
+    var nome = document.getElementById('nome').value.trim();
     var email = document.getElementById('email').value.trim();
 
     
-    document.getElementById('nameError').textContent = '';
-    document.getElementById('emailError').textContent = '';
-
-    
-    if (name === '') {
-        document.getElementById('nameError').textContent = 'Nome não pode estar vazio';
-        return; 
+    if (nome === '') {
+        exibirMensagemErro('Por favor, informe seu nome.');
+        return;
     }
-
-    
     if (email === '') {
-        document.getElementById('emailError').textContent = 'Email não pode estar vazio';
-        return; 
+        exibirMensagemErro('Por favor, informe seu email.');
+        return;
     }
 
-    t
+    
     var formData = {
-        name: name,
+        nome: nome,
         email: email
     };
+
+    
     console.log(JSON.stringify(formData));
 
     
+    document.getElementById('nome').value = '';
+    document.getElementById('email').value = '';
 
+    
+    exibirMensagemSucesso('Dados enviados com sucesso!');
 });
+
+function exibirMensagemErro(mensagem) {
+    var mensagemElemento = document.getElementBy
+
 
