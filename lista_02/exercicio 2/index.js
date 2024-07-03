@@ -1,26 +1,38 @@
-function validateForm() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var errorMessages = [];
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('formulario');
+    const nomeInput = document.getElementById('nome');
+    const emailInput = document.getElementById('email');
+    const mensagemElement = document.getElementById('mensagem');
 
-    if (name.trim() === '') {
-        errorMessages.push('O campo Nome não pode estar vazio.');
-    }
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    if (email.trim() === '') {
-        errorMessages.push('O campo Email não pode estar vazio.');
-    }
+       
+        mensagemElement.innerText = '';
 
-    if (errorMessages.length > 0) {
         
-        alert(errorMessages.join('\n'));
-    } else {
+        const nomeValue = nomeInput.value.trim();
+        if (nomeValue === '') {
+            mensagemElement.innerText = 'Por favor, preencha o nome.';
+            return; 
+        }
+
+        /
+        const emailValue = emailInput.value.trim();
+        if (emailValue === '') {
+            mensagemElement.innerText = 'Por favor, preencha o email.';
+            return; 
+        }
+
         
-        var formData = {
-            nome: name,
-            email: email
+        const formData = {
+            nome: nomeValue,
+            email: emailValue
         };
+
         console.log(JSON.stringify(formData));
+
         
-    }
-}
+        mensagemElement.innerText = 'Formulário enviado com sucesso!';
+    });
+});

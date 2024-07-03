@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>QUESTÃO 01 - LISTA 02 - LÓGICA DE PROGRAMAÇÃO - SENAI</title>
-    </head>
-    <body>
-        <p><a href="../../">< Voltar</a></p>
-        <form id="myForm">
-    <label for="name">Nome:</label>
-    <input type="text" id="name" name="name"><br><br>
+<head>
+    <meta charset="UTF-8">
+    <title>QUESTÃO 02 - LISTA 02 - LÓGICA DE PROGRAMAÇÃO - SENAI</title>
+</head>
+<body>
+    <p><a href="../../">< Voltar</a></p>
+    
+    <form id="formulario">
+        <input id="nome" placeholder="Informe seu nome" />
+        <input id="email" placeholder="Informe seu email"/>
+        <button id="botao" type="submit">Enviar</button>
+    </form>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
+    <p id="mensagem"></p>
 
-    <button type="button" onclick="validateForm()">Enviar</button>
-</form>
+    
+    <script src="index.js"></script>
+</body>
+</html>
