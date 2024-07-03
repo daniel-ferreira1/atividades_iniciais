@@ -1,38 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('formulario');
-    const nomeInput = document.getElementById('nome');
-    const emailInput = document.getElementById('email');
-    const mensagemElement = document.getElementById('mensagem');
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    
+    event.preventDefault();
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+   
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
 
-       
-        mensagemElement.innerText = '';
+    
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
 
-        
-        const nomeValue = nomeInput.value.trim();
-        if (nomeValue === '') {
-            mensagemElement.innerText = 'Por favor, preencha o nome.';
-            return; 
-        }
+    
+    if (name === '') {
+        document.getElementById('nameError').textContent = 'Nome não pode estar vazio';
+        return; 
+    }
 
-        /
-        const emailValue = emailInput.value.trim();
-        if (emailValue === '') {
-            mensagemElement.innerText = 'Por favor, preencha o email.';
-            return; 
-        }
+    
+    if (email === '') {
+        document.getElementById('emailError').textContent = 'Email não pode estar vazio';
+        return; 
+    }
 
-        
-        const formData = {
-            nome: nomeValue,
-            email: emailValue
-        };
+    t
+    var formData = {
+        name: name,
+        email: email
+    };
+    console.log(JSON.stringify(formData));
 
-        console.log(JSON.stringify(formData));
+    
 
-        
-        mensagemElement.innerText = 'Formulário enviado com sucesso!';
-    });
 });
+
