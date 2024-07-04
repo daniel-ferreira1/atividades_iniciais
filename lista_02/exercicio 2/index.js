@@ -1,5 +1,5 @@
 document.getElementById('formulario').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que o formulário seja enviado automaticamente
+    event.preventDefault(); 
 
     var nome = document.getElementById('nome').value.trim();
     var email = document.getElementById('email').value.trim();
