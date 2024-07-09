@@ -1,20 +1,26 @@
-document.getElementById('userForm').addEventListener('submit', function(event) {
+document.getElementById('formulario').addEventListener('submit', function(event) {
     event.preventDefault(); 
-    
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-
-    var table = document.getElementById('userTable').getElementsByTagName('tbody')[0];
-    var newRow = table.insertRow();
-
-   
-    var nameCell = newRow.insertCell(0);
-    var emailCell = newRow.insertCell(1);
 
     
-    nameCell.textContent = name;
-    emailCell.textContent = email;
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
 
 
-    document.getElementById('userForm').reset();
+    if (nome && email) {
+      
+        const tabela = document.getElementById('tabelaUsuarios').getElementsByTagName('tbody')[0];
+        const novaLinha = tabela.insertRow();
+
+        const celulaNome = novaLinha.insertCell(0);
+        const celulaEmail = novaLinha.insertCell(1);
+
+       
+        celulaNome.textContent = nome;
+        celulaEmail.textContent = email;
+
+      
+        document.getElementById('formulario').reset();
+    } else {
+        alert("Por favor, preencha todos os campos.");
+    }
 });
