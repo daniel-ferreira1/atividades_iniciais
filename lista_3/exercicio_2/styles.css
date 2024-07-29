@@ -1,13 +1,14 @@
-p:nth-of-type(1) {
+
+#paragrafo1 {
     color: #00FF00; 
 }
 
 
-p:nth-of-type(2) {
+#paragrafo2 {
     font-size: 20px; 
 }
 
 
-p:nth-of-type(3) {
-    border: 1px solid #000000;
+#paragrafo3 {
+    border: 1px solid #000000; 
 }

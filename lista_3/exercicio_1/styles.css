@@ -1,6 +1,7 @@
-    h1{
-#tituloPrincipal 
-    color: green;
+h1 {
+    color: #0000FF; 
 }
-    
 
+p {
+    font-size: 16px;
+}
