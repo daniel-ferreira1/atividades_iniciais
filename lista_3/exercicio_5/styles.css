@@ -1,0 +1,13 @@
+/* Estilo para o container principal */
+.container {
+    display: flex; /* Define o container principal como um flex container */
+}
+
+/* Estilo para as divs dentro do container */
+.box {
+    flex: 1; /* Distribui as três divs igualmente em linha dentro do container */
+    border: 1px solid #000000; /* Adiciona uma borda de 1px sólida na cor preta */
+    padding: 20px; /* Adiciona um padding de 20px dentro de cada div */
+    text-align: center; /* Alinha o texto ao centro dentro de cada div */
+    margin: 5px; /* Opcional: Adiciona uma margem entre as divs para melhor visualização */
+}
