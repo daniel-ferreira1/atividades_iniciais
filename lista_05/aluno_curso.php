@@ -2,7 +2,7 @@
 
 include_once 'db.php';
 
-class Pessoa {
+class aluno_curso {
 
     private $conn;
 
@@ -14,11 +14,12 @@ class Pessoa {
     function getAll() {
         $sql = "SELECT 
             id, 
-            Pessoa, 
-            documento, 
-            DATE_FORMAT(data_de_cadastro, '%d/%m/%Y %H:%i:%s') data_cadastro,
-            DATE_FORMAT(data_de_nascimento, '%d/%m/%Y') data_nascimento
-        FROM pessoa";
+            id_aluno,
+            id_curso,
+            DATE_FORMAT(data_cadastro, '%d/%m/%Y %H:%i:%s') data_cadastro,
+            DATE_FORMAT(data_fim, '%d/%m/%Y') data_fim,
+             DATE_FORMAT(data_inicio, '%d/%m/%Y %H:%i:%s') data_inicio
+        FROM aluno_curso";
         $result = $this->conn->query($sql);
 
         $data = [];
@@ -132,7 +133,7 @@ if (!in_array($_SERVER['REQUEST_METHOD'], $allowed_methods)) {
     ] );
 }
 
-$pessoa = new Pessoa($conn);
+$pessoa = new aluno_curso($conn);
 
 if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
     echo json_encode($pessoa->deleteById($_GET['id']));
